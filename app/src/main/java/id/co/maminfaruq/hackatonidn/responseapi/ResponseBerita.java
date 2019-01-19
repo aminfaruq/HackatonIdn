@@ -1,11 +1,10 @@
 package id.co.maminfaruq.hackatonidn.responseapi;
 
-import java.util.List;
-import javax.annotation.Generated;
 import com.google.gson.annotations.SerializedName;
 
-@Generated("com.robohorse.robopojogenerator")
-public class ResponseBerita {
+import java.util.List;
+
+public class ResponseBerita{
 
 	@SerializedName("totalResults")
 	private int totalResults;

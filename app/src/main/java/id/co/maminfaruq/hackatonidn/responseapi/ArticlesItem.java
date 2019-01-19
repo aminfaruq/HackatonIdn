@@ -1,9 +1,7 @@
 package id.co.maminfaruq.hackatonidn.responseapi;
 
-import javax.annotation.Generated;
 import com.google.gson.annotations.SerializedName;
 
-@Generated("com.robohorse.robopojogenerator")
 public class ArticlesItem{
 
 	@SerializedName("publishedAt")
