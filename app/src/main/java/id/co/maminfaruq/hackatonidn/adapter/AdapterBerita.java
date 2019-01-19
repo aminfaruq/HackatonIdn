@@ -1,5 +1,6 @@
 package id.co.maminfaruq.hackatonidn.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -16,6 +17,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import id.co.maminfaruq.hackatonidn.R;
+import id.co.maminfaruq.hackatonidn.model.BeritaModel;
 import id.co.maminfaruq.hackatonidn.responseapi.ArticlesItem;
 
 public class AdapterBerita extends RecyclerView.Adapter<AdapterBerita.ViewHolder> {
@@ -36,11 +38,24 @@ public class AdapterBerita extends RecyclerView.Adapter<AdapterBerita.ViewHolder
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(@NonNull ViewHolder viewHolder, @SuppressLint("RecyclerView") final int i) {
         viewHolder.txtJudulBerita.setText(berita.get(i).getTitle());
         viewHolder.txtPenulis.setText(berita.get(i).getAuthor());
         viewHolder.txtTglTerbit.setText(berita.get(i).getPublishedAt());
         Glide.with(context).load(berita.get(i).getUrlToImage()).into(viewHolder.imgBerita);
+
+        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                BeritaModel beritaModel = new BeritaModel();
+
+                beritaModel.setTitle(berita.get(i).getTitle());
+                beritaModel.setAuthor(berita.get(i).getAuthor());
+                beritaModel.setContent(berita.get(i).getContent());
+                beritaModel.setPublishedAt(berita.get(i).getPublishedAt());
+                beritaModel.setUrl(berita.get(i).getUrl());
+            }
+        });
 
     }
 
