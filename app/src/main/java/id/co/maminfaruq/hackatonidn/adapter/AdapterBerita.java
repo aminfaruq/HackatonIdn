@@ -2,6 +2,7 @@ package id.co.maminfaruq.hackatonidn.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -17,6 +18,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import id.co.maminfaruq.hackatonidn.R;
+import id.co.maminfaruq.hackatonidn.activities.DetailActivity;
 import id.co.maminfaruq.hackatonidn.model.BeritaModel;
 import id.co.maminfaruq.hackatonidn.responseapi.ArticlesItem;
 
@@ -54,6 +56,10 @@ public class AdapterBerita extends RecyclerView.Adapter<AdapterBerita.ViewHolder
                 beritaModel.setContent(berita.get(i).getContent());
                 beritaModel.setPublishedAt(berita.get(i).getPublishedAt());
                 beritaModel.setUrl(berita.get(i).getUrl());
+
+                Intent intent = new Intent(context, DetailActivity.class);
+                intent.putExtra(DetailActivity. EXTRA_OBJ, beritaModel);
+                context.startActivity(intent);
             }
         });
 
