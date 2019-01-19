@@ -15,12 +15,14 @@
         android:orientation="horizontal">
 
     <ImageView
+        android:scaleType="center"
+        android:id="@+id/imgBerita"
         android:src="@mipmap/ic_launcher"
         android:layout_width="120dp"
         android:layout_height="125dp" />
 
     <LinearLayout
-        android:layout_margin="10dp"
+        android:padding="7dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -31,24 +33,26 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/acme"
             android:text="Judul Berita"
-            android:textSize="15sp"
+            android:textSize="13sp"
             android:textStyle="bold" />
 
+
         <TextView
+            android:textSize="11sp"
+            android:paddingTop="2dp"
             android:id="@+id/txtPenulis"
             android:text="penulis"
-            android:layout_marginTop="15dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <TextView
+            android:layout_marginTop="5dp"
             android:id="@+id/txtTglTerbit"
-            android:layout_gravity="right"
-            android:textSize="10sp"
-            android:layout_marginTop="30dp"
+            android:textSize="9sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="10 - 10 -2014"/>
+
 
     </LinearLayout>
 
