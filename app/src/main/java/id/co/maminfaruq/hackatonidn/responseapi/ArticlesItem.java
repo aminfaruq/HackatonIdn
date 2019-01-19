@@ -91,4 +91,5 @@ public class ArticlesItem{
 	public String getContent(){
 		return content;
 	}
+
 }

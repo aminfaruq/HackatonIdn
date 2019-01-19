@@ -1,4 +1,5 @@
 package id.co.maminfaruq.hackatonidn.adapter;
 
-public class AdapterBerita {
+public class AdapterBerita{
+
 }
